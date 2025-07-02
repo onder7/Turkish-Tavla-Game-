@@ -28,7 +28,7 @@ A modern implementation of the traditional Turkish backgammon game (Tavla) built
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/turkish-tavla-game.git
+git clone https://github.com/onder7/Turkish-Tavla-Game-.git
 cd turkish-tavla-game
 ```
 
@@ -145,7 +145,7 @@ If you find any bugs or issues, please open an issue on GitHub with:
 
 1. Depoyu klonlayın:
 ```bash
-git clone https://github.com/kullaniciadi/turkish-tavla-game.git
+git clone https://github.com/onder7/Turkish-Tavla-Game-.git
 cd turkish-tavla-game
 ```
 
