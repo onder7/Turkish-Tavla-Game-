@@ -1,2 +1,4 @@
+pygame>=2.1.0
+=======
 Python 3.7 or higher
 Pygame library
