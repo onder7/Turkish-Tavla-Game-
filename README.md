@@ -262,6 +262,64 @@ Herhangi bir hata veya sorun bulursanız, lütfen GitHub'da şunları içeren bi
 - Pygame community / Pygame topluluğu
 - Contributors / Katkıda bulunanlar
 
----
+---Multı Player---
+Aynı Eventlet sorunu! Mevcut `multiplayer_server.py` dosyanızı düzeltelim. Threading backend kullanacak şekilde güncelleyelim:## 🔄 **Değişiklikler**
+
+### **Ana Düzeltmeler:**
+1. **Threading backend** - `async_mode='threading'` eklendi
+2. **Eventlet bağımlılığı kaldırıldı**
+3. **Gelişmiş hata yönetimi** - Oyun modülleri yoksa basit mod
+4. **Python 3.12+ uyumluluğu**
+5. **Daha iyi logging ve debugging**
+
+### **Yeni Özellikler:**
+- **Web dashboard** - http://localhost:5000
+- **Canlı istatistikler** - /stats endpoint
+- **Oda listesi** - /rooms endpoint
+- **Bağlantı durumu gösterimi**
+
+## 🚀 **Kullanım**
+
+### **1. Sunucuyu Başlat**
+```bash
+python multiplayer_server.py
+```
+
+### **2. Web Dashboard'u Kontrol Et**
+Tarayıcıda açın: http://localhost:5000
+
+### **3. Client'i Başlat**
+```bash
+python multiplayer_client.py
+```
+
+### **4. İstatistikleri İzle**
+- http://localhost:5000/stats (JSON)
+- http://localhost:5000/rooms (Oda listesi)
+
+## 🔧 **Hata Giderme**
+
+### **Eğer Hala Hata Alırsan:**
+```bash
+# Eventlet'i tamamen kaldır
+pip uninstall eventlet
+
+# Sadece gerekli modülleri yükle
+pip install flask flask-socketio
+
+# Threading mode'da çalıştır
+python multiplayer_server.py
+```
+
+### **Port Kontrolü:**
+```bash
+# Windows
+netstat -ano | findstr :5000
+
+# Linux/Mac  
+lsof -i :5000
+```
+
+Bu düzeltilmiş versiyon Python 3.12+ ile tam uyumlu ve Eventlet olmadan çalışır! 🎮✨
 
 **Enjoy playing Turkish Tavla! / Türk Tavlası oynamanın keyfini çıkarın!** 🎲✨
